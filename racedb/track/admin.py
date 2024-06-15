@@ -6,6 +6,7 @@ from .models import Track
 
 class Trackadmin(admin.ModelAdmin):
     list_display = ['name', 'download_as_link',]
+    ordering = ['name',]
 
     def download_as_link(self, obj):
         return format_html('<a href="{download}" target="dl_track">{download}</a>', download=obj.download)
